@@ -7,9 +7,9 @@ function Comment() {
 
    useEffect(()=>{
        fetch("https://ebath-back1.vercel.app/afficheCommentaires")
-       .then(res =>res.res.set({
+       .then(res =>res.set({
         "Access-Control-Allow-Origin": "https://ebath1.vercel.app",
-        // "Access-Control-Allow-Credentials": true
+        "Access-Control-Allow-Credentials": true
     }).json())
        .then(data =>setContactData(data))
        .catch(err => console.log(err));
