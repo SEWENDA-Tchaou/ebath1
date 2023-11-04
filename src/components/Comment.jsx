@@ -6,7 +6,7 @@ function Comment() {
 
 
    useEffect(()=>{
-       fetch("https://fine-pink-deer.cyclic.app/afficheCommentaires")
+       fetch("https://ebath1.vercel.app/afficheCommentaires")
        .then(res =>res.json())
        .then(data =>setContactData(data))
        .catch(err => console.log(err));
