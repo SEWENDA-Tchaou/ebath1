@@ -15,7 +15,7 @@ function TalkForUs() {
 
     const handleSubmit = ()=>{
         // e.preventDefault();
-        axios.post("https://fine-pink-deer.cyclic.app/commentForUs", {name, email, phone, comment})
+        axios.post("https://ebath-back1.vercel.app/commentForUs", {name, email, phone, comment})
         .then(res => {
             console.log(res);
             console.log(
