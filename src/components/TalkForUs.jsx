@@ -13,8 +13,8 @@ function TalkForUs() {
 
     const Navigate = useNavigate();
 
-    const handleSubmit = ()=>{
-        // e.preventDefault();
+    const handleSubmit = (e)=>{
+        e.preventDefault();
         console.log(
             "name: ", name,
             "email: ", email,
