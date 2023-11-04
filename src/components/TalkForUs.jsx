@@ -15,14 +15,14 @@ function TalkForUs() {
 
     const handleSubmit = ()=>{
         // e.preventDefault();
+        console.log(
+            "name: ", name,
+            "email: ", email,
+            "phone: ", phone,
+            "comment : ", comment);
         axios.post("https://ebath-back1.vercel.app/commentForUs", {name, email, phone, comment})
         .then(res => {
             console.log(res);
-            console.log(
-                "name: ", name,
-                "email: ", email,
-                "phone: ", phone,
-                "comment : ", comment);
             Navigate("/");
         })
         .catch(err => console.log(err)); 
