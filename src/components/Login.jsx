@@ -14,7 +14,7 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(values)
-    axios.post('https://fine-pink-deer.cyclic.app/login', values)
+    axios.post('https://ebath-back1.vercel.app/login', values)
     .then(res => {
       console.log(res.data.Status)
       if(res.data.Status === "succes"){
