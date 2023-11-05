@@ -3,6 +3,7 @@ import Input from "./Input";
 import Comment from "./Comment";
 // import axios from 'axios';
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 
 function TalkForUs() {
@@ -20,12 +21,8 @@ function TalkForUs() {
             "email: ", email,
             "phone: ", phone,
             "comment : ", comment);
-            const addData = {name,email,phone, comment}
-        fetch("https://ebath-back1.vercel.app/commentForUs", {
-            method: "POST",
-            headers: {"content-type":"application/json"},
-            body:JSON.stringify(addData)
-        }).then((res)=>{
+        axios.post("https://ebath-back1.vercel.app/commentForUs", {name,email,phone, comment})
+        .then((res)=>{
             console.log(res)
             alert("ajouter avec succes")
             window.location.reload()
