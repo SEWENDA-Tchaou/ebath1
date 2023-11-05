@@ -25,13 +25,14 @@ function TalkForUs() {
             method: "POST",
             headers: {"content-type":"application/json"},
             body:JSON.stringify(addData)
-        }).then(res => {
+        }).then((res)=>{
+            console.log(res)
             alert("ajouter avec succes")
             window.location.reload()
-            console.log(res);
-            Navigate("/");
-        })
-        .catch(err => console.log(err)); 
+            Navigate("/")
+          }).catch((err)=>{
+            console.log(err)
+          })
     }
 
     return (
