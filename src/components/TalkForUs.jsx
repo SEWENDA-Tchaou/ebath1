@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Input from "./Input";
 import Comment from "./Comment";
-import axios from 'axios';
+// import axios from 'axios';
 import { useNavigate } from "react-router-dom";
 
 
@@ -13,19 +13,26 @@ function TalkForUs() {
 
     const Navigate = useNavigate();
 
-    const handleSubmit = ()=>{
-        // e.preventDefault();
+    const handleSubmit = (e)=>{
+        e.preventDefault();
         console.log(
             "name: ", name,
             "email: ", email,
             "phone: ", phone,
             "comment : ", comment);
-        axios.post("https://ebath-back1.vercel.app/commentForUs", {name, email, phone, comment})
-        .then(res => {
-            console.log(res);
-            Navigate("/");
-        })
-        .catch(err => console.log(err)); 
+            const addData = {name,email,phone, comment}
+        fetch("https://ebath-back1.vercel.app/commentForUs", {
+            method: "POST",
+            headers: {"content-type":"application/json"},
+            body:JSON.stringify(addData)
+        }).then((res)=>{
+            console.log(res)
+            alert("ajouter avec succes")
+            window.location.reload()
+            Navigate("/")
+          }).catch((err)=>{
+            console.log(err)
+          })
     }
 
     return (
