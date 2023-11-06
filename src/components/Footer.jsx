@@ -16,7 +16,7 @@ function Footer() {
     const handleSubmit = ()=>{
         // e.preventDefault();
         console.log(email)
-        axios.post("https://fine-pink-deer.cyclic.app/sendYourMail", {email})
+        axios.post("https://ebath-back1.vercel.app/sendYourMail", {email})
         .then(res => {console.log(res);
           Navigate("/");
         })

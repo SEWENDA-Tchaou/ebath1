@@ -24,8 +24,6 @@ function TalkForUs() {
         axios.post("https://ebath-back1.vercel.app/commentForUs", {name,email,phone, comment})
         .then((res)=>{
             console.log(res)
-            alert("ajouter avec succes")
-            window.location.reload()
             Navigate("/")
           }).catch((err)=>{
             console.log(err)
