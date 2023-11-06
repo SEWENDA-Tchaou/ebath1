@@ -16,11 +16,9 @@ function Footer() {
     const handleSubmit = ()=>{
         // e.preventDefault();
         console.log(email)
-        axios.post("https://ebath-back1.vercel.app/sendYourMail", {email})
-        .then(res => {console.log(res);
+        axios.post("https://ebath-back1.vercel.app/sendYourMail", {email}).then(res => {console.log(res);
           Navigate("/");
-        })
-        .catch(err => console.log(err)); 
+        }).catch(err => console.log(err)); 
       }
 
   return (
