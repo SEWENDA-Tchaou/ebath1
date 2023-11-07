@@ -1,24 +1,48 @@
 import axios from "axios";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import localisation from '../assets/localisation.png';
 import tel from '../assets/tel.png';
 import email1 from '../assets/email1.png';
 import facebook from '../assets/facebook.png';
 import copyright from '../assets/copyright.png';
+import FormData from 'form-data';
+
 
 
 function Footer() {
     const [email, setEmail] = useState("");
 
-    const Navigate = useNavigate();
+    // const Navigate = useNavigate();
 
     const handleSubmit = ()=>{
         // e.preventDefault();
-        console.log(email)
-        axios.post("https://ebath-back1.vercel.app/sendYourMail", {email}).then(res => {console.log(res);
-          Navigate("/");
-        }).catch(err => console.log(err)); 
+        // console.log(email)
+        // axios.post("https://ebath-back1.vercel.app/sendYourMail", {email}).then(res => {console.log(res);
+        //   Navigate("/");
+        // }).catch(err => console.log(err)); 
+        // const axios = require('axios');
+let data = new FormData();
+data.append('email', `${email}`);
+
+let config = {
+  method: 'post',
+  maxBodyLength: Infinity,
+  url: 'https://ebath-back1.vercel.app/sendYourMail',
+//   headers: { 
+//     ...data.getHeaders()
+//   },
+  data : data
+};
+
+axios.request(config)
+.then((response) => {
+  console.log(JSON.stringify(response.data));
+})
+.catch((error) => {
+  console.log(error);
+});
+
       }
 
   return (

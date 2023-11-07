@@ -2,8 +2,10 @@ import { useState } from "react";
 import Input from "./Input";
 import Comment from "./Comment";
 // import axios from 'axios';
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import FormData from 'form-data';
+
 
 
 function TalkForUs() {
@@ -12,22 +14,52 @@ function TalkForUs() {
     const [phone, setPhone] = useState("");
     const [comment, setComment] = useState("");
 
-    const Navigate = useNavigate();
+    // const Navigate = useNavigate();
 
-    const handleSubmit = (e)=>{
-        e.preventDefault();
+    const handleSubmit = ()=>{
+        // e.preventDefault();
         console.log(
             "name: ", name,
             "email: ", email,
             "phone: ", phone,
             "comment : ", comment);
-        axios.post("https://ebath-back1.vercel.app/commentForUs", {name,email,phone, comment})
-        .then((res)=>{
-            console.log(res)
-            Navigate("/")
-          }).catch((err)=>{
-            console.log(err)
-          })
+        // axios.post("https://ebath-back1.vercel.app/commentForUs", {name,email,phone, comment})
+        // .then((res)=>{
+        //     console.log(res)
+        //     Navigate("/")
+        //   }).catch((err)=>{
+        //     console.log(err)
+        //   })
+        // const axios = require('axios');
+// let data = JSON.stringify({
+//     'name':`${name}`,
+//     'email':`${email}`,
+//     'phone':`${phone}`,
+//     'comment':`${comment}`
+// });
+
+let data = new FormData();
+data.append('name', `${name}`);
+data.append('email', `${email}`);
+data.append('phone', `${phone}`);
+data.append('comment', `${comment}`);
+
+
+let config = {
+  method: 'post',
+  maxBodyLength: Infinity,
+  url: 'https://ebath-back1.vercel.app/commentForUs',
+  data : data
+};
+
+axios.request(config)
+.then((response) => {
+  console.log(JSON.stringify(response.data));
+})
+.catch((error) => {
+  console.log(error);
+});
+
     }
 
     return (
