@@ -1,4 +1,4 @@
-import axios from 'axios';
+// import axios from 'axios';
 import { Tab } from '@headlessui/react';
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
@@ -9,14 +9,14 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-import ReadMoreMessageRecu from '../PageDashboard/ReadMoreMessageRecu';
+// import ReadMoreMessageRecu from '../PageDashboard/ReadMoreMessageRecu';
 
 function Projects() {
     const [activeButton, setActiveButton] = useState('tout');
-    const [contenuSiteA, setContenuSite] = useState([]);
-    const [contenuSiteBtp, setContenuSiteBtp] = useState([]);
-    const [contenuSiteHotel, setContenuSiteHotel] = useState([]);
-    const [contenuSiteBackground, setContenuSiteBackground] = useState([]);
+    // const [contenuSiteA, setContenuSite] = useState([]);
+    // const [contenuSiteBtp, setContenuSiteBtp] = useState([]);
+    // const [contenuSiteHotel, setContenuSiteHotel] = useState([]);
+    // const [contenuSiteBackground, setContenuSiteBackground] = useState([]);
     const [slidesPerView, setSlidesPerView] = useState(3);
     const isMobile = useMediaQuery({ maxWidth: 767 });
     const isMedium = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
@@ -32,36 +32,36 @@ function Projects() {
         }
     }, [isMobile, isMedium]);
 
-    useEffect(() => {
-        getContents();
-        getBtpContents();
-        getHotelContents();
-        getBackgroundContents();
-    }, [contenuSiteA, contenuSiteBtp, contenuSiteHotel,contenuSiteBackground]);
+    // useEffect(() => {
+    //     getContents();
+    //     getBtpContents();
+    //     getHotelContents();
+    //     getBackgroundContents();
+    // }, [contenuSiteA, contenuSiteBtp, contenuSiteHotel,contenuSiteBackground]);
 
-    const getContents = async() => {
-        const response = await axios.get("https://ebath-back1.vercel.app/contents");
-        console.log(response.data)
-        setContenuSite(response.data);
-    };
+    // const getContents = async() => {
+    //     const response = await axios.get("https://fine-pink-deer.cyclic.app/contents");
+    //     console.log(response.data)
+    //     setContenuSite(response.data);
+    // };
 
-    const getBtpContents = async() => {
-        const response = await axios.get("https://ebath-back1.vercel.app/btp");
-        console.log(response.data)
-        setContenuSiteBtp(response.data);
-    };
+    // const getBtpContents = async() => {
+    //     const response = await axios.get("https://fine-pink-deer.cyclic.app/btp");
+    //     console.log(response.data)
+    //     setContenuSiteBtp(response.data);
+    // };
 
-    const getHotelContents = async() => {
-        const response = await axios.get("https://ebath-back1.vercel.app/hotel");
-        console.log(response.data)
-        setContenuSiteHotel(response.data);
-    };
+    // const getHotelContents = async() => {
+    //     const response = await axios.get("https://fine-pink-deer.cyclic.app/hotel");
+    //     console.log(response.data)
+    //     setContenuSiteHotel(response.data);
+    // };
 
-    const getBackgroundContents = async() => {
-        const response = await axios.get("https://fine-pink-deer.cyclic.app/background");
-        console.log(response.data)
-        setContenuSiteBackground(response.data);
-    };
+    // const getBackgroundContents = async() => {
+    //     const response = await axios.get("https://fine-pink-deer.cyclic.app/background");
+    //     console.log(response.data)
+    //     setContenuSiteBackground(response.data);
+    // };
 
     return (
         <div className="mx-4 sm:mx-12">
@@ -99,7 +99,7 @@ function Projects() {
                                 <div className="flex justify-start items-center space-x-8">
                                     {/* ========= */}
                                     <div className='grid grid-cols-2 gap-2'>
-                                        {contenuSiteBtp.slice(-2).map((data) => (
+                                        {/* {contenuSiteBtp.slice(-2).map((data) => (
                                             <div key={data.id} className='m-1'>
                                                 <div className='w-full h-full bg-orange text-center p-2'>
                                                 <figure className="image ">
@@ -112,11 +112,11 @@ function Projects() {
                                                 <p className='my-1 text-center text-blanc text-sm'>{data.name}</p>
                                                 </div>
                                             </div>
-                                        ))}
+                                        ))} */}
                                     </div>
                                     {/* ======== */}
                                 </div>
-                                {
+                                {/* {
                                     contenuSiteBackground.slice(-1).map((data) => (
                                         <div
                                             key={data.id}
@@ -128,10 +128,10 @@ function Projects() {
                                             </span>
                                         </div>
                                     ))
-                                }
+                                } */}
                             </div>
                             <div className="space-y-4  sm:w-1/3 mx-2">
-                                {contenuSiteHotel.slice(-2).map((data) => (
+                                {/* {contenuSiteHotel.slice(-2).map((data) => (
                                     <div key={data.id} className="bg-noir/10 text-center m-1 p-2">
                                         <p className='bg-rouge text-blanc px-5 w-16'>Pub</p>
                                         <img
@@ -143,7 +143,7 @@ function Projects() {
                                             {data.name}
                                         </p>
                                     </div>
-                                ))}
+                                ))} */}
                             </div>
                         </Tab.Panel>
                         <Tab.Panel className="my-4">
@@ -155,7 +155,7 @@ function Projects() {
                                     navigation
                                     pagination={{ clickable: true }}
                                 >
-                                    {contenuSiteBtp.map((data) => (
+                                    {/* {contenuSiteBtp.map((data) => (
                                         <SwiperSlide key={data.id} className=''>
                                             <div className=' rounded-md bg-noir/10 shadow-2xl h-full text-center p-2'>
                                                 <figure className="image ">
@@ -173,7 +173,7 @@ function Projects() {
                                                 
                                             </div>
                                         </SwiperSlide>
-                                    ))}
+                                    ))} */}
                                 </Swiper>
                             </div>
                         </Tab.Panel>
