@@ -8,7 +8,7 @@ function Header() {
   axios.defaults.withCredentials = true;
 
   useEffect(()=>{
-    axios.get("https://fine-pink-deer.cyclic.app/")
+    axios.get("https://ebath-back1.vercel.app/")
     .then(res => {
       if(res.data.Status === "succes"){
         // setAuth(true);

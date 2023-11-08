@@ -6,7 +6,7 @@ function Log_out() {
   const [name, setName] = useState("");
 
   const handleLogout = () => {
-    axios.get("https://odd-plum-hare.cyclic.app//logout")
+    axios.get("https://ebath-back1.vercel.app/logout")
     .then(res => {
       if(res.data.Status === "succes") {
         location.reload(true);
@@ -22,7 +22,7 @@ function Log_out() {
   axios.defaults.withCredentials = true;
 
   useEffect(() => {
-    axios.get("https://fine-pink-deer.cyclic.app/")
+    axios.get("https://ebath-back1.vercel.app/")
     .then(res => {
       if(res.data.Status === "succes"){
         setName(res.data.name);

@@ -9,7 +9,7 @@ function HeaderAccueil() {
             <Navbar />
             <div className="w-full h-full flex justify-center items-center">
                 <h1 className="text-5xl lg:text-3xl lg:w-1/2 text-center sm:text-left text-blanc uppercase font-bold mx-20">
-                    EBATH BTP construit pour vous Et vous recevez vos clés
+                Nous construisons les infrastructures pour demain
                 </h1>
             </div>
         </div>

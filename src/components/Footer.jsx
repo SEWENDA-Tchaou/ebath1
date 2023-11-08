@@ -52,7 +52,7 @@ axios.request(config)
             <div className="w-1/3 space-y-5">
                 <h1 className="text-bold text-3xl">EBATH BTP</h1>
                 <p>
-                    EBATH est créé en 2018 par B’DEMAN Kossi K., Economiste et ingénieur en Génie-Civil.
+                    EBATH est créé en 2018 par  B'DEMAN KOSSI marc, Economiste et ingénieur en Génie-Civil.
                     Le bureau de l’entreprise EBATH  Sise à Kara au  Quartier Lama...
                 </p>
             </div>
@@ -110,7 +110,7 @@ axios.request(config)
             <div className=" space-y-2">
                 <h1 className="text-bold text-md ">EBATH BTP</h1>
                 <p className="my-2">
-                    EBATH est créé en 2018 par B’DEMAN Kossi K., Economiste et ingénieur en Génie-Civil.
+                    EBATH est créé en 2018 par  B'DEMAN KOSSI marc, Economiste et ingénieur en Génie-Civil.
                     Le bureau de l’entreprise EBATH  Sise à Kara au  Quartier Lama...
                 </p>
             </div>

@@ -30,7 +30,7 @@ function Contact() {
                 <div>
                   <h1>EBATH BTP</h1>
                   <p>
-                    EBATH est créé en 2018 par B’DEMAN Kossi K., Economiste et ingénieur en Génie-Civil.
+                    EBATH est créé en 2018 par  B'DEMAN KOSSI marc, Economiste et ingénieur en Génie-Civil.
                     Le bureau de l’entreprise EBATH  Sise à Kara au  Quartier Lama...
                 </p>
                 </div>

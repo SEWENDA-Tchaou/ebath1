@@ -8,15 +8,17 @@ function Dashboard() {
   const [auth, setAuth] = useState(false)
   axios.defaults.withCredentials = true;
   useEffect(()=>{
-    axios.get("https://odd-plum-hare.cyclic.app/")
+    axios.get("https://ebath-back1.vercel.app/")
     .then(res=>{
+      // console.log(auth)
       if(res.data.Status === "succes"){
         setAuth(true);
+        console.log(auth)
       }else{
         setAuth(false);
       }
     })
-  }, [])
+  }, [auth])
 
   return (
     <div className='bg-noir/10'>
@@ -35,7 +37,7 @@ function Dashboard() {
         </div>
       </React.Fragment>
         :
-      <div></div>
+      <div>no data</div>
       }
     </div>
   )

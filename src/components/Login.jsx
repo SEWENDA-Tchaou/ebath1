@@ -1,30 +1,57 @@
 import axios from 'axios'
 import {useState } from "react"
 import { useNavigate } from "react-router-dom";
+import FormData from 'form-data';
 
 function Login() {
-  const [values,  setValues] = useState({ 
-    email:"",
-    password:""
-  })
+  // const [values,  setValues] = useState({ 
+  //   email:"",
+  //   password:""
+  // })
 
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
   axios.defaults.withCredentials = true;
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(values)
-    axios.post('https://ebath-back1.vercel.app/login', values)
-    .then(res => {
-      console.log(res.data.Status)
-      if(res.data.Status === "succes"){
-          navigate("/dashboard/*")
-      }else{
-          alert(res.data.Message)
-      }
-    })
-    .catch(err=>console.log(err))
-  };
+  //   console.log(values)
+  //   axios.post('https://ebath-back1.vercel.app/login', values)
+  //   .then(res => {
+  //     console.log(res.data.Status)
+  //     if(res.data.Status === "succes"){
+  //         navigate("/dashboard/*")
+  //     }else{
+  //         alert(res.data.Message)
+  //     }
+  //   })
+  //   .catch(err=>console.log(err))
+ 
+let data = new FormData();
+data.append('email', `${email}`);
+data.append('password', `${password}`);
+
+let config = {
+  method: 'post',
+  maxBodyLength: Infinity,
+  url: 'https://ebath-back1.vercel.app/login',
+  data : data
+};
+
+axios.request(config)
+.then((response) => {
+  console.log(JSON.stringify(response.data));
+  if(response.data.Status === "succes"){
+            navigate("/dashboard/*")
+        }else{
+            alert(response.data.Message)
+        }
+})
+.catch((error) => {
+  console.log(error);
+});
+   };
 
   return (
     <>
@@ -45,7 +72,8 @@ function Login() {
               <input type="email"
                 className="border px-5"
                 name="email"
-                onChange={e => setValues({...values, email: e.target.value})}
+                value={email}
+                onChange={e => setEmail(e.target.value)}
               /> <br /><br />
 
               <label htmlFor="" className="mr-5">Mot de passe</label>
@@ -53,7 +81,8 @@ function Login() {
                 type="password"
                 className="border px-5"
                 name="password"
-                onChange={e => setValues({...values, password: e.target.value})}
+                value={password}
+                onChange={e => setPassword(e.target.value)}
               /> <br /> <br />
 
               <button

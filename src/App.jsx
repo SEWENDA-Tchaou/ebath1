@@ -5,17 +5,17 @@ import Services from './pagesSite/Services';
 import Contact from './pagesSite/Contact';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
-import All from './PageDashboard/All';
-import Btp from './PageDashboard/Btp';
-import Hotel from './PageDashboard/Hotel';
-import PageAcceuil from './PageDashboard/PageAcceuil';
-import Conditions from './components/Conditions';
-import UpdateAll from './PageDashboard/UpdateAll';
-import UpdateBtp from './PageDashboard/UpdateBtp';
-import UpdateHotel from './PageDashboard/UpdateHotel';
-import BackgroundBanner from './PageDashboard/BackgroundBanner';
-import Commentaires from './PageDashboard/Commentaires';
-import Newsletter from './PageDashboard/Newsletter';
+// import All from './PageDashboard/All';
+// import Btp from './PageDashboard/Btp';
+// import Hotel from './PageDashboard/Hotel';
+// import PageAcceuil from './PageDashboard/PageAcceuil';
+// import Conditions from './components/Conditions';
+// import UpdateAll from './PageDashboard/UpdateAll';
+// import UpdateBtp from './PageDashboard/UpdateBtp';
+// import UpdateHotel from './PageDashboard/UpdateHotel';
+// import BackgroundBanner from './PageDashboard/BackgroundBanner';
+// import Commentaires from './PageDashboard/Commentaires';
+// import Newsletter from './PageDashboard/Newsletter';
 
 function App() {
   return (
@@ -27,9 +27,9 @@ function App() {
           <Route path="/apropos" element={<APropos />} />
           <Route path="/login" element={<Login />} />
           <Route path="/dashboard/*" element={<Dashboard />} />
-          <Route path="/allcontact" element={<All />} />
+          {/* <Route path="/allcontact" element={<All />} /> */}
           <Route path="/contact" element={<Contact />} />
-          <Route path="/btp" element={<Btp />} />
+          {/* <Route path="/btp" element={<Btp />} />
           <Route path="/hotel" element={<Hotel />} />
           <Route path="/background" element={<BackgroundBanner />} />
           <Route path="/conditions" element={<Conditions />} />
@@ -38,7 +38,7 @@ function App() {
           <Route path="/updateBtp/:id" element={<UpdateBtp />} />
           <Route path="/updateHotel/:id" element={<UpdateHotel />} />
           <Route path="/commentaire" element={<Commentaires />} />
-          <Route path="/newsletter" element={<Newsletter />} />
+          <Route path="/newsletter" element={<Newsletter />} /> */}
         </Routes>
       </BrowserRouter>
     </div>

@@ -13,7 +13,7 @@ function APropos() {
         </div>
         <div className="text-justify  my-8 space-y-4">
           <span className="text-noir text-md sm:text-lg mb-16">
-            L’Entreprise de Bâtiment et des Travaux Hydrauliques (EBATH) est créé en 2018 par B’DEMAN Kossi K., Economiste et ingénieur en Génie-Civil.
+            L’Entreprise de Bâtiment et des Travaux Hydrauliques (EBATH) est créé en 2018 par  B'DEMAN KOSSI marc, Economiste et ingénieur en Génie-Civil.
             Le bureau de l’entreprise EBATH  Sise à Kara au quartier Lama, non loin du nouveau marché à 50 m de la mosquée d’EL Adj Moumouni.
             Nous sommes une entreprise spécialisée dans les travaux Publics comme : les routes, les caniveaux, les pose des paves, les dalots ; fausses ; les bâtiments et les travaux privés.
             Nous sommes egalement une entreprise spécialisée dans  la restauration, l’hébergement et service traiteur. Nous disposons de trois hôtel: Hôtel Marciale Kara Bohou, Hôtel LA FAYETTE ET l’Hôtel MA VISION B2K à Awandjelou.          
