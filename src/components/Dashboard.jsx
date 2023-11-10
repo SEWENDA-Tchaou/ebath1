@@ -14,20 +14,12 @@ function Dashboard() {
     axios.get("https://ebath-back1.vercel.app")
     .then(res=>{
       // console.log(auth)
-      // if(res.data.Status === "succes"){
+      if(res.data.Status === "succes" && !localStorage.getItem('token')){
+        setAuth(true);
         // console.log(auth)
-        // setAuth(false);
-      // }else{
-        // setAuth(true);
-      // }
-      if(res.data.Status === "succes"){
-        setAuth(true)
-        
-      }else if(!localStorage.getItem('token')){
-        navigate('/login')
       }else{
-        setAuth(false)
-
+        setAuth(false);
+        navigate('/login')
       }
     })
   }, [])
