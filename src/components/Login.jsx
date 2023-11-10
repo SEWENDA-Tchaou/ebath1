@@ -42,15 +42,15 @@ let config = {
 axios.request(config)
 .then((response) => {
   console.log(JSON.stringify(response.data));
-  if(!localStorage.getItem('token')){
-            navigate("/login")
+  if(response.data.Status === "succes"){
+            navigate("/dashboard/*")
         }else{
             alert(response.data.Message)
         }
 })
 .catch((error) => {
   console.log(error);
-},[]);
+});
    };
 
   return (
