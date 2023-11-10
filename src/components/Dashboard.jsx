@@ -1,27 +1,27 @@
 import axios from 'axios';
-import React, { useEffect } from 'react';
+// import React, { useEffect } from 'react';
 import Sidebar from './Sidebar';
 import ContentPages from './ContentPages';
 import HeaderDashboard from '../PageDashboard/HeaderDashboard'
-import { useNavigate } from 'react-router-dom';
+// import { useNavigate } from 'react-router-dom';
 
 function Dashboard() {
   // const [auth, setAuth] = useState(false)
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   axios.defaults.withCredentials = true;
-  useEffect(()=>{
+  // useEffect(()=>{
     
-    if(!localStorage.getItem('token')){
-      navigate('/login')
-    }
+  //   if(!localStorage.getItem('token')){
+  //     navigate('/login')
+  //   }
   
-  }, [])
+  // }, [])
 
   return (
     <div className='bg-noir/10'>
-    {auth ?
-      <React.Fragment>
+    {/* {auth ? */}
+      {/* <React.Fragment> */}
         <div>
           <HeaderDashboard/>
           <section className="flex my-4">
@@ -33,7 +33,7 @@ function Dashboard() {
             </div>
           </section>
         </div>
-      </React.Fragment>
+      {/* </React.Fragment> */}
       {/* }  */}
     </div>
   )
