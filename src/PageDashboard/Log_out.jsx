@@ -22,7 +22,7 @@ function Log_out() {
   axios.defaults.withCredentials = true;
 
   useEffect(() => {
-    axios.get("https://ebath-back1.vercel.app/")
+    axios.get("https://ebath-back1.vercel.app")
     .then(res => {
       if(res.data.Status === "succes"){
         setName(res.data.name);

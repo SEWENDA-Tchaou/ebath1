@@ -10,7 +10,7 @@ function Comment() {
        .then(res =>res.json())
        .then(data =>setContactData(data))
        .catch(err => console.log(err));
-   }, )
+   }, [])
 
 
     return (

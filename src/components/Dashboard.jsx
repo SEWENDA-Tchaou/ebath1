@@ -1,28 +1,28 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Sidebar from './Sidebar';
 import ContentPages from './ContentPages';
 import HeaderDashboard from '../PageDashboard/HeaderDashboard'
 
 function Dashboard() {
-  const [auth, setAuth] = useState(false)
+  // const [auth, setAuth] = useState(false)
   axios.defaults.withCredentials = true;
   useEffect(()=>{
-    axios.get("https://ebath-back1.vercel.app/")
+    axios.get("https://ebath-back1.vercel.app")
     .then(res=>{
       // console.log(auth)
       if(res.data.Status === "succes"){
-        setAuth(true);
-        console.log(auth)
+        // setAuth(true);
+        // console.log(auth)
       }else{
-        setAuth(false);
+        // setAuth(false);
       }
     })
-  }, [auth])
+  }, [])
 
   return (
     <div className='bg-noir/10'>
-    {auth ?
+    {/* {auth ? */}
       <React.Fragment>
         <div>
           <HeaderDashboard/>
@@ -36,9 +36,9 @@ function Dashboard() {
           </section>
         </div>
       </React.Fragment>
-        :
+        {/* :
       <div>no data</div>
-      }
+      } */}
     </div>
   )
 }
