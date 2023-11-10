@@ -12,7 +12,7 @@ function Dashboard() {
   axios.defaults.withCredentials = true;
   useEffect(()=>{
     axios.get("https://ebath-back1.vercel.app")
-    .then(()=>{
+    .then(res=>{
       // console.log(auth)
       // if(res.data.Status === "succes"){
         // console.log(auth)
@@ -20,10 +20,14 @@ function Dashboard() {
       // }else{
         // setAuth(true);
       // }
-      if(!localStorage.getItem('token')){
+      if(res.data.Status === "succes"){
+        setAuth(true)
+        
+      }else if(!localStorage.getItem('token')){
         navigate('/login')
       }else{
-        setAuth(true)
+        setAuth(false)
+
       }
     })
   }, [])
