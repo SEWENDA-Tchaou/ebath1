@@ -11,19 +11,18 @@ function Dashboard() {
     axios.get("https://ebath-back1.vercel.app")
     .then(res=>{
       // console.log(auth)
-      // if(
-        res.data.Status === "succes"
-        // ){
-      //   // console.log(auth)
-      // }else if( auth=== true){
-      //   setAuth(true);
-      // }
+      if(res.data.Status === "succes"){
+        // console.log(auth)
+        setAuth(false);
+      }else{
+        setAuth(true);
+      }
     })
   }, [])
 
   return (
     <div className='bg-noir/10'>
-    {auth && auth ?
+    {auth ?
       <React.Fragment>
         <div>
           <HeaderDashboard/>
