@@ -6,7 +6,7 @@ import HeaderDashboard from '../PageDashboard/HeaderDashboard'
 import { useNavigate } from 'react-router-dom';
 
 function Dashboard() {
-  const [auth, setAuth] = useState(false)
+  // const [auth, setAuth] = useState(false)
   const navigate = useNavigate();
 
   axios.defaults.withCredentials = true;
@@ -14,17 +14,15 @@ function Dashboard() {
     
     if(!localStorage.getItem('token')){
       navigate('/login')
-    }else{
-      setAuth(true)
     }
   
   }, [])
 
   return (
     <div className='bg-noir/10'>
-    {auth ?
-      <div>no data</div>
-       :
+    {/* {auth ? */}
+      {/* <div>no data</div>
+       : */}
       
       <React.Fragment>
         <div>
@@ -39,7 +37,7 @@ function Dashboard() {
           </section>
         </div>
       </React.Fragment>
-      } 
+      {/* }  */}
     </div>
   )
 }
