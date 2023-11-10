@@ -6,24 +6,31 @@ import HeaderDashboard from '../PageDashboard/HeaderDashboard'
 import { useNavigate } from 'react-router-dom';
 
 function Dashboard() {
-  // const [auth, setAuth] = useState(false)
+  const [auth, setAuth] = useState(false)
   const navigate = useNavigate();
 
   axios.defaults.withCredentials = true;
   useEffect(()=>{
-    
-    if(!localStorage.getItem('token')){
-      navigate('/login')
-    }
-  
+    axios.get("https://ebath-back1.vercel.app")
+    .then(()=>{
+      // console.log(auth)
+      // if(res.data.Status === "succes"){
+        // console.log(auth)
+        // setAuth(false);
+      // }else{
+        // setAuth(true);
+      // }
+      if(!localStorage.getItem('token')){
+        navigate('/login')
+      }else{
+        setAuth(true)
+      }
+    })
   }, [])
 
   return (
     <div className='bg-noir/10'>
-    {/* {auth ? */}
-      {/* <div>no data</div>
-       : */}
-      
+    {auth ?
       <React.Fragment>
         <div>
           <HeaderDashboard/>
@@ -37,7 +44,9 @@ function Dashboard() {
           </section>
         </div>
       </React.Fragment>
-      {/* }  */}
+       :
+      <div>no data</div>
+      } 
     </div>
   )
 }
