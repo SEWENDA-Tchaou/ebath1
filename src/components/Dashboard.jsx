@@ -1,27 +1,29 @@
 import axios from 'axios';
-// import React, { useEffect } from 'react';
+import React, { useEffect,useState } from 'react';
 import Sidebar from './Sidebar';
 import ContentPages from './ContentPages';
 import HeaderDashboard from '../PageDashboard/HeaderDashboard'
-// import { useNavigate } from 'react-router-dom';
 
 function Dashboard() {
-  // const [auth, setAuth] = useState(false)
-  // const navigate = useNavigate();
-
+  const [auth, setAuth] = useState(false)
   axios.defaults.withCredentials = true;
-  // useEffect(()=>{
-    
-  //   if(!localStorage.getItem('token')){
-  //     navigate('/login')
-  //   }
-  
-  // }, [])
+  useEffect(()=>{
+    axios.get("https://ebath-back1.vercel.app")
+    .then(res=>{
+      // console.log(auth)
+      if(res.data.Status === "succes"){
+        setAuth(true);
+        // console.log(auth)
+      }else{
+        // setAuth(false);
+      }
+    })
+  }, [])
 
   return (
     <div className='bg-noir/10'>
-    {/* {auth ? */}
-      {/* <React.Fragment> */}
+    {auth ?
+      <React.Fragment>
         <div>
           <HeaderDashboard/>
           <section className="flex my-4">
@@ -33,8 +35,10 @@ function Dashboard() {
             </div>
           </section>
         </div>
-      {/* </React.Fragment> */}
-      {/* }  */}
+      </React.Fragment>
+     :
+      <div>no data</div>
+      } 
     </div>
   )
 }
