@@ -42,8 +42,8 @@ let config = {
 axios.request(config)
 .then((response) => {
   console.log(JSON.stringify(response.data));
-  if(localStorage.getItem('token')){
-            navigate("/dashboard/*")
+  if(!localStorage.getItem('token')){
+            navigate("/login")
         }else{
             alert(response.data.Message)
         }
