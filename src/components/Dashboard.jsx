@@ -12,7 +12,7 @@ function Dashboard() {
     axios.get("https://ebath-back1.vercel.app")
     .then(res=>{
       // console.log(auth)
-      if(res.data.Status !== "succes" && email){
+      if(res.data.Status === "succes" && email){
         setAuth(true);
         setEmail(true)
         // console.log(auth)
