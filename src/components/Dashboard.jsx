@@ -14,6 +14,8 @@ function Dashboard() {
     
     if(!localStorage.getItem('token')){
       navigate('/login')
+    }else{
+      setAuth(true)
     }
   
   }, [])
