@@ -23,7 +23,7 @@ function Dashboard() {
 
   return (
     <div className='bg-noir/10'>
-    {auth ?
+    {auth && auth ?
       <React.Fragment>
         <div>
           <HeaderDashboard/>
