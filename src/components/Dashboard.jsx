@@ -14,7 +14,7 @@ function Dashboard() {
     axios.get("https://ebath-back1.vercel.app")
     .then(res=>{
       // console.log(auth)
-      if(res.data.Status === "succes" && !localStorage.getItem('token')){
+      if(res.data.Status === "succes"){
         setAuth(true);
         // console.log(auth)
       }else{
