@@ -1,21 +1,19 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import Sidebar from './Sidebar';
 import ContentPages from './ContentPages';
 import HeaderDashboard from '../PageDashboard/HeaderDashboard'
-// import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function Dashboard() {
-  const [auth, setAuth] = useState(false)
-  // const navigate = useNavigate();
+  // const [auth, setAuth] = useState(false)
+  const navigate = useNavigate();
 
   axios.defaults.withCredentials = true;
-  useEffect(res=>{
+  useEffect(()=>{
     
-    if(res.data.Status === "succes"){
-      setAuth(true)
-    }else{
-      setAuth(false)
+    if(!localStorage.getItem('token')){
+      navigate('/login')
     }
   
   }, [])
@@ -36,11 +34,7 @@ function Dashboard() {
           </section>
         </div>
       </React.Fragment>
-      
-       : 
-       <div>no data</div>
-    
-     }
+      {/* }  */}
     </div>
   )
 }
