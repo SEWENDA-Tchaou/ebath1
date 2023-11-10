@@ -42,7 +42,7 @@ let config = {
 axios.request(config)
 .then((response) => {
   console.log(JSON.stringify(response.data));
-  if(response.data.Status === "succes"){
+  if(localStorage.getItem('token')){
             navigate("/dashboard/*")
         }else{
             alert(response.data.Message)
@@ -50,7 +50,7 @@ axios.request(config)
 })
 .catch((error) => {
   console.log(error);
-});
+},[]);
    };
 
   return (
