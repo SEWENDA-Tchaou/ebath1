@@ -5,24 +5,24 @@ import ContentPages from './ContentPages';
 import HeaderDashboard from '../PageDashboard/HeaderDashboard'
 
 function Dashboard() {
-  // const [auth, setAuth] = useState(false)
+  const [auth, setAuth] = useState(false)
   axios.defaults.withCredentials = true;
   useEffect(()=>{
     axios.get("https://ebath-back1.vercel.app")
     .then(res=>{
       // console.log(auth)
       if(res.data.Status === "succes"){
-        // setAuth(true);
+        setAuth(true);
         // console.log(auth)
       }else{
-        // setAuth(false);
+        setAuth(false);
       }
     })
   }, [])
 
   return (
     <div className='bg-noir/10'>
-    {/* {auth ? */}
+    {auth ?
       <React.Fragment>
         <div>
           <HeaderDashboard/>
@@ -36,9 +36,9 @@ function Dashboard() {
           </section>
         </div>
       </React.Fragment>
-        {/* :
+       :
       <div>no data</div>
-      } */}
+      } 
     </div>
   )
 }
