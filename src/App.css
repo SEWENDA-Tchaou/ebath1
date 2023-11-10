@@ -92,13 +92,13 @@ form .connecter{
   color: green;
 }
 
-.Img_Admin{
+/* .Img_Admin{
   background-image: url('../src/assets/img/equipe.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
   height: 116vh;
-}
+} */
 
 .entete{
   margin: 10px 20px;
