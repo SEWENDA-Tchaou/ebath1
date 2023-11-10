@@ -6,19 +6,19 @@ import HeaderDashboard from '../PageDashboard/HeaderDashboard'
 
 function Dashboard() {
   const [auth, setAuth] = useState(false)
-  const [email, setEmail]= useState(false)
+  // const [email, setEmail]= useState(false)
   axios.defaults.withCredentials = true;
   useEffect(()=>{
     axios.get("https://ebath-back1.vercel.app")
     .then(res=>{
       // console.log(auth)
-      if(res.email === true){
+      if(res.auth === true){
         setAuth(true);
-        setEmail(true)
+        // setEmail(true)
         // console.log(auth)
       }else{
         setAuth(false);
-        setEmail(false)
+        // setEmail(false)
 
       }
     })
