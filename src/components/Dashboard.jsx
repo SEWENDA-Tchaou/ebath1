@@ -9,9 +9,9 @@ function Dashboard() {
   axios.defaults.withCredentials = true;
   useEffect(()=>{
     axios.get("https://ebath-back1.vercel.app")
-    .then(()=>{
+    .then((response)=>{
       // console.log(auth)
-      if(localStorage.getItem('token')){
+      if(localStorage.getItem('token' && response.data.Status === "succes")){
         setAuth(true);
         // console.log(auth)
       }else{
