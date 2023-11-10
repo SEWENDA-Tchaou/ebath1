@@ -119,7 +119,7 @@ function BackgroundBanner() {
                           href={`updateBtp/${data.id}`}
                           className='text-bleue hover:text-blanc hover:bg-bleue px-2 rounded-md'
                         >
-                          Edit
+                          Edite
                         </a>
                         <button
                           onClick={() => deleteContent(data.id)}
