@@ -15,7 +15,7 @@ function Dashboard() {
         setAuth(true);
         // console.log(auth)
       }else{
-        // setAuth(false);
+        setAuth(false);
       }
     })
   }, [])
