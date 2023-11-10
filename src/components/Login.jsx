@@ -42,10 +42,11 @@ let config = {
 axios.request(config)
 .then((response) => {
   console.log(JSON.stringify(response.data));
-  if(response.data.Status === "succes"){
-            navigate("/dashboard/*")
-        }else{
-            alert(response.data.Message)
+  if(response){
+    alert(response.data.Message);  
+    
+        }else(response.data.Status === "succes");{
+          navigate("/dashboard/*");
         }
 })
 .catch((error) => {
