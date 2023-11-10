@@ -10,10 +10,10 @@ function Dashboard() {
   useEffect(()=>{
     axios.get("https://ebath-back1.vercel.app")
     .then(res=>{
-      // console.log(auth)
+      console.log(auth)
       if(res.data.Status === "succes"){
         setAuth(true);
-        // console.log(auth)
+        console.log(auth)
       }else{
         setAuth(false);
       }
