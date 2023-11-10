@@ -12,7 +12,7 @@ function Login() {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
   axios.defaults.withCredentials = true;
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,11 +42,10 @@ let config = {
 axios.request(config)
 .then((response) => {
   console.log(JSON.stringify(response.data));
-  if(response){
-    alert(response.data.Message);  
-    
-        }else(response.data.Status === "succes");{
-          navigate("/dashboard/*");
+  if(response.data.Status === "succes"){
+            // navigate("/dashboard/*")
+        }else{
+            alert(response.data.Message)
         }
 })
 .catch((error) => {
