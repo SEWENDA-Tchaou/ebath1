@@ -6,8 +6,8 @@ import Contact from './pagesSite/Contact';
 import Login from './components/Login';
 import Dashboard from './components/Dashboard';
 // import All from './PageDashboard/All';
-// import Btp from './PageDashboard/Btp';
-// import Hotel from './PageDashboard/Hotel';
+import Btp from './PageDashboard/Btp';
+import Hotel from './PageDashboard/Hotel';
 // import PageAcceuil from './PageDashboard/PageAcceuil';
 // import Conditions from './components/Conditions';
 // import UpdateAll from './PageDashboard/UpdateAll';
@@ -29,9 +29,9 @@ function App() {
           <Route path="/dashboard/*" element={<Dashboard />} />
           {/* <Route path="/allcontact" element={<All />} /> */}
           <Route path="/contact" element={<Contact />} />
-          {/* <Route path="/btp" element={<Btp />} />
+         <Route path="/btp" element={<Btp />} />
           <Route path="/hotel" element={<Hotel />} />
-          <Route path="/background" element={<BackgroundBanner />} />
+           {/* <Route path="/background" element={<BackgroundBanner />} />
           <Route path="/conditions" element={<Conditions />} />
           <Route path="/pageAcceuil" element={<PageAcceuil />} />
           <Route path="/update/:id" element={<UpdateAll />} />
