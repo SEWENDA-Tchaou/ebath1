@@ -11,11 +11,11 @@ function Dashboard() {
     axios.get("https://ebath-back1.vercel.app")
     .then(res=>{
       // console.log(auth)
-      if(res.data.Status === "succes"){
-        setAuth(true);
+      if(res.data.Status !== "succes"){
         // console.log(auth)
-      }else{
         setAuth(false);
+      }else{
+        setAuth(true);
       }
     })
   }, [])
