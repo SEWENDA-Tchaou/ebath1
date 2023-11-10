@@ -46,7 +46,7 @@ function APropos() {
                 Valeurs
               </p>
               <p className="text-noir text-md sm:text-xl text-center mx-2 sm:mx-8">
-              {"Les valeurs de l'entreprise EBATH: innovation.Ces valeurs capitales, placées au cœur de l'activité, permettent de remplir deux objectifs : la satisfaction client et la satisfaction personnelle d'un travail réussi et esthétique."}
+              {"Innovation.Ces valeurs capitales, placées au cœur de l'activité, permettent de remplir deux objectifs : la satisfaction client et la satisfaction personnelle d'un travail réussi et esthétique."}
               </p>
             </div>
             <div className="flex flex-col items-center justify-center gap-4">
