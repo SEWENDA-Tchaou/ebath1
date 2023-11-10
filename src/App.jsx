@@ -4,7 +4,7 @@ import APropos from './pagesSite/APropos';
 import Services from './pagesSite/Services';
 import Contact from './pagesSite/Contact';
 import Login from './components/Login';
-import Dashboard from './components/Dashboard';
+// import Dashboard from './components/Dashboard';
 import All from './PageDashboard/All';
 import Btp from './PageDashboard/Btp';
 import Hotel from './PageDashboard/Hotel';
@@ -16,6 +16,8 @@ import UpdateHotel from './PageDashboard/UpdateHotel';
 import BackgroundBanner from './PageDashboard/BackgroundBanner';
 import Commentaires from './PageDashboard/Commentaires';
 import Newsletter from './PageDashboard/Newsletter';
+import ProtectedLogin from './ProtectedLogin';
+import Dashboard from './components/Dashboard';
 
 function App() {
   return (
@@ -26,7 +28,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/apropos" element={<APropos />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard/*" element={<Dashboard />} />
+          <Route path="/dashboard/*" element={<ProtectedLogin><Dashboard/></ProtectedLogin>} />
           <Route path="/allcontact" element={<All />} />
           <Route path="/contact" element={<Contact />} />
          <Route path="/btp" element={<Btp />} />
