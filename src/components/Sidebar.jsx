@@ -15,10 +15,6 @@ function Sidebar() {
       name: "Background Banner"
     },
     {
-      path: "/pageAcceuil",
-      name: "Page Acceuil"
-    },
-    {
       path: "/allcontact",
       name: "Messages recus"
     },
