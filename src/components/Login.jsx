@@ -42,11 +42,13 @@ let config = {
 axios.request(config)
 .then((response) => {
   console.log(JSON.stringify(response.data));
-  if(response.data.Status === "succes"){
-            navigate("/dashboard/*")
-        }else{
-            alert(response.data.Message)
-        }
+//   if(response.data.Status === "succes"){
+//             navigate("/dashboard/*")
+//         }else{
+//             alert(response.data.Message)
+//         }
+localStorage.setItem("token", response.data.token);
+				navigate("/dashboard/*");
 })
 .catch((error) => {
   console.log(error);
