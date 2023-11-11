@@ -1,4 +1,4 @@
-import {BrowserRouter, Routes, Route, Navigate} from 'react-router-dom';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Accueil from './pagesSite/Accueil';
 import APropos from './pagesSite/APropos';
 import Services from './pagesSite/Services';
@@ -16,17 +16,8 @@ import UpdateHotel from './PageDashboard/UpdateHotel';
 import BackgroundBanner from './PageDashboard/BackgroundBanner';
 import Commentaires from './PageDashboard/Commentaires';
 import Newsletter from './PageDashboard/Newsletter';
-import { Navigate } from  'react-router-dom';
 
 function App() {
-  const requireAuth = (Component) => {
-    return () => {
-      if (!fakeAuth.isAuthenticated) {
-        return <Navigate to="/login" />;
-      }
-      return <Component />;
-    };
-  };
   return (
     <div>
       <BrowserRouter>
@@ -35,8 +26,7 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/apropos" element={<APropos />} />
           <Route path="/login" element={<Login />} />
-          {/* <Route path="/dashboard/*" element={<Dashboard />} /> */}
-          <Route path="/dashboard/*" element={requireAuth(Dashboard)} />
+          <Route path="/dashboard/*" element={<Dashboard />} />
           <Route path="/allcontact" element={<All />} />
           <Route path="/contact" element={<Contact />} />
          <Route path="/btp" element={<Btp />} />
