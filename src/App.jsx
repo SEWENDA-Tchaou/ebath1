@@ -19,8 +19,6 @@ import Commentaires from './PageDashboard/Commentaires';
 import Newsletter from './PageDashboard/Newsletter';
 
 function App() {
-  const [auth, setAuth] = useState(false)
-
   return (
     <div>
       <BrowserRouter>
@@ -31,8 +29,8 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/allcontact" element={<All />} />
           <Route path="/contact" element={<Contact />} />
-          <Route  element={<ProtectedRoute/>} auth={auth} >
-             <Route path="/dashboard/*" element={<Dashboard />} />
+          <Route  element={<ProtectedRoute/>} >
+            <Route path="/dashboard/*" element={<Dashboard />} />
           </Route>
          <Route path="/btp" element={<Btp />} />
           <Route path="/hotel" element={<Hotel />} />
