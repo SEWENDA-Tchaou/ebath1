@@ -3,13 +3,12 @@ import React, { useEffect } from 'react';
 import Sidebar from './Sidebar';
 import ContentPages from './ContentPages';
 import HeaderDashboard from '../PageDashboard/HeaderDashboard'
-import { useParams } from 'react-router-dom';
+
 function Dashboard() {
-  const { dashboardId } = useParams();
   // const [auth, setAuth] = useState(false)
   axios.defaults.withCredentials = true;
   useEffect(()=>{
-    axios.get(`https://ebath-back1.vercel.app/dashboard/${dashboardId}`)
+    axios.get("https://ebath-back1.vercel.app")
     .then((response)=>{
       // console.log(auth)
       // if(
@@ -21,7 +20,7 @@ function Dashboard() {
         // setAuth(false);
       // }
     })
-  }, [dashboardId])
+  }, [])
 
   return (
     <div className='bg-noir/10'>
