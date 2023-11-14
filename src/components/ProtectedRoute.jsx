@@ -14,9 +14,11 @@ function ProtectedRoute() {
             // Remplacez cette logique par la vérification réelle de l'authentification
             const response = await fetch('https://ebath-back1.vercel.app/login');
             const data = await response.json();
-            navigate("/dashboard/*")
             // Mettez à jour l'état d'authentification en fonction de la réponse du serveur
             setAuth(data.isAuthenticated);
+            if (data.isAuthenticated) {
+                navigate("/dashboard/*");
+              }
           } catch (error) {
             console.error('Erreur lors de la vérification de l\'authentification', error);
           }
