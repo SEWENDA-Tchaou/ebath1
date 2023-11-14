@@ -4,7 +4,7 @@ import APropos from './pagesSite/APropos';
 import Services from './pagesSite/Services';
 import Contact from './pagesSite/Contact';
 import Login from './components/Login';
-import Dashboard from './components/Dashboard';
+// import Dashboard from './components/Dashboard';
 import All from './PageDashboard/All';
 import Btp from './PageDashboard/Btp';
 import Hotel from './PageDashboard/Hotel';
@@ -29,9 +29,9 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/allcontact" element={<All />} />
           <Route path="/contact" element={<Contact />} />
-          <Route  element={<ProtectedRoute/>} >
-              <Route path="/dashboard/*" element={<Dashboard />} />
-          </Route>
+          {/* <Route  element={<ProtectedRoute/>} > */}
+              <Route path="/dashboard/*" element={<ProtectedRoute />} />
+          {/* </Route> */}
           <Route path="/btp" element={<Btp />} />
           <Route path="/hotel" element={<Hotel />} />
           <Route path="/background" element={<BackgroundBanner />} />
