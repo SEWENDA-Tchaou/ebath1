@@ -2,6 +2,7 @@ import axios from 'axios'
 import {useState } from "react"
 import { useNavigate } from "react-router-dom";
 import FormData from 'form-data';
+import { Navigate, Outlet } from "react-router-dom"
 
 function Login() {
   // const [values,  setValues] = useState({ 
@@ -13,6 +14,7 @@ function Login() {
     const [password, setPassword] = useState("")
   axios.defaults.withCredentials = true;
   const navigate = useNavigate();
+  const auth = true
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,6 +45,7 @@ axios.request(config)
 .then((response) => {
   console.log(JSON.stringify(response.data));
   if(response.data.Status === "succes"){
+    auth ? <Outlet />: <Navigate to='/login'/>
             navigate("/dashboard/*")
         }else{
             alert(response.data.Message)
