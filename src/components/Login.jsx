@@ -13,7 +13,7 @@ function Login() {
     const [password, setPassword] = useState("")
   axios.defaults.withCredentials = true;
   const navigate = useNavigate();
-  const auth = false
+  const [auth, setAuth] = useState(false)
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -88,6 +88,7 @@ axios.request(config)
 
               <button
                 type="submit"
+                onClick={()=>setAuth(true)}
                 className="bg-cafe hover:bg-blanc border hover:text-cafe hover:border-cafe rounded text-blanc p-2"
               >
                 Se connecter
