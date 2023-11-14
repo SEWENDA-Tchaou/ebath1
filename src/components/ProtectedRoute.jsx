@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
-import { Navigate, Outlet } from "react-router-dom"
+import { Navigate, Outlet, useNavigate } from "react-router-dom"
 
 function ProtectedRoute() {
     const [auth, setAuth] = useState(false);
+  const navigate = useNavigate();
+
     useEffect(() => {
         // Mettez ici la logique d'authentification, par exemple, vérifiez si l'utilisateur est connecté
         // Cela pourrait impliquer une requête à un serveur, la vérification d'un token, etc.
@@ -12,7 +14,7 @@ function ProtectedRoute() {
             // Remplacez cette logique par la vérification réelle de l'authentification
             const response = await fetch('https://ebath-back1.vercel.app/login');
             const data = await response.json();
-    
+            navigate("/dashboard/*")
             // Mettez à jour l'état d'authentification en fonction de la réponse du serveur
             setAuth(data.isAuthenticated);
           } catch (error) {
