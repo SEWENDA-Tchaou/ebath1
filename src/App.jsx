@@ -36,6 +36,7 @@ function App() {
              :
              'nothing'
             }
+            <Route path="/dashboard/*" element={<Dashboard />} />
           </Route>
          <Route path="/btp" element={<Btp />} />
           <Route path="/hotel" element={<Hotel />} />
