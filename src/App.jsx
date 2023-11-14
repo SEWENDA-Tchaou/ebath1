@@ -9,7 +9,7 @@ import All from './PageDashboard/All';
 import Btp from './PageDashboard/Btp';
 import Hotel from './PageDashboard/Hotel';
 // import PageAcceuil from './PageDashboard/PageAcceuil';
-// import ProtectedRoute from './components/ProtectedRoute'
+import ProtectedRoute from './components/ProtectedRoute'
 import Conditions from './components/Conditions';
 import UpdateAll from './PageDashboard/UpdateAll';
 import UpdateBtp from './PageDashboard/UpdateBtp';
@@ -19,7 +19,7 @@ import Commentaires from './PageDashboard/Commentaires';
 import Newsletter from './PageDashboard/Newsletter';
 
 function App() {
-//  const auth= true
+ const auth= true
   return (
     <div>
       <BrowserRouter>
@@ -30,13 +30,13 @@ function App() {
           <Route path="/services" element={<Services />} />
           <Route path="/allcontact" element={<All />} />
           <Route path="/contact" element={<Contact />} />
-          {/* <Route  element={<ProtectedRoute/>} >
+          <Route  element={<ProtectedRoute/>} >
             {auth ?
+             <Route path="/dashboard/*" element={<Dashboard />} />
              :
-             ""
+             'nothing'
             }
-          </Route> */}
-            <Route path="/dashboard/*" element={<Dashboard />} />
+          </Route>
          <Route path="/btp" element={<Btp />} />
           <Route path="/hotel" element={<Hotel />} />
             <Route path="/background" element={<BackgroundBanner />} />
