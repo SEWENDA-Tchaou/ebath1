@@ -9,6 +9,7 @@ import All from './PageDashboard/All';
 import Btp from './PageDashboard/Btp';
 import Hotel from './PageDashboard/Hotel';
 // import PageAcceuil from './PageDashboard/PageAcceuil';
+import ProtectedRoute from './components/ProtectedRoute'
 import Conditions from './components/Conditions';
 import UpdateAll from './PageDashboard/UpdateAll';
 import UpdateBtp from './PageDashboard/UpdateBtp';
@@ -23,12 +24,14 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Accueil />} />
-          <Route path="/services" element={<Services />} />
           <Route path="/apropos" element={<APropos />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/dashboard/*" element={<Dashboard />} />
+          <Route path="/services" element={<Services />} />
           <Route path="/allcontact" element={<All />} />
           <Route path="/contact" element={<Contact />} />
+          <Route  element={<ProtectedRoute/>} >
+             <Route path="/dashboard/*" element={<Dashboard />} />
+          </Route>
          <Route path="/btp" element={<Btp />} />
           <Route path="/hotel" element={<Hotel />} />
             <Route path="/background" element={<BackgroundBanner />} />
