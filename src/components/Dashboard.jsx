@@ -6,7 +6,7 @@ import HeaderDashboard from '../PageDashboard/HeaderDashboard'
 
 function Dashboard() {
   // const [auth, setAuth] = useState(false)
-  const auth = false
+  const auth = true
   axios.defaults.withCredentials = true;
   useEffect(()=>{
     axios.get("https://ebath-back1.vercel.app")
