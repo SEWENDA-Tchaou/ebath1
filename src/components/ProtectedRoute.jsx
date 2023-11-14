@@ -26,7 +26,7 @@ function ProtectedRoute() {
     
         // Appelez la fonction de vérification de l'authentification lors du montage du composant
         checkAuthentication();
-      }, []);
+      }, [navigate]);
     
     
   return (
