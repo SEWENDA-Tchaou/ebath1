@@ -26,9 +26,6 @@ function Dashboard() {
   return (
     <div className='bg-noir/10'>
     {auth ?
-      <div>no data</div>
-      
-      :
       <React.Fragment>
         <div>
           <HeaderDashboard/>
@@ -42,6 +39,8 @@ function Dashboard() {
           </section>
         </div>
       </React.Fragment>
+      :
+      <div>no data</div>
       }  
     </div>
   )
