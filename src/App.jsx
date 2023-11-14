@@ -33,7 +33,6 @@ function App() {
           <Route  element={<ProtectedRoute/>} >
              <Route path="/dashboard/*" element={<Dashboard />} />
           </Route>
-            <Route path="/dashboard/*" element={<Dashboard />} />
          <Route path="/btp" element={<Btp />} />
           <Route path="/hotel" element={<Hotel />} />
             <Route path="/background" element={<BackgroundBanner />} />
