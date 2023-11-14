@@ -19,22 +19,18 @@ import Commentaires from './PageDashboard/Commentaires';
 import Newsletter from './PageDashboard/Newsletter';
 
 function App() {
-  const auth= false
   return (
     <div>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Accueil />} />
           <Route path="/apropos" element={<APropos />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/services" element={<Services />} />
           <Route path="/allcontact" element={<All />} />
           <Route path="/contact" element={<Contact />} />
           <Route  element={<ProtectedRoute/>} >
-            {auth?
               <Route path="/dashboard/*" element={<Dashboard />} />
-              :
-            <Route path="/login" element={<Login />} />
-            }
           </Route>
           <Route path="/btp" element={<Btp />} />
           <Route path="/hotel" element={<Hotel />} />
