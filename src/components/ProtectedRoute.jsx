@@ -17,7 +17,7 @@ function ProtectedRoute() {
             // Mettez à jour l'état d'authentification en fonction de la réponse du serveur
             setAuth(data.isAuthenticated);
             if (data.isAuthenticated) {
-                navigate("/dashboard/*");
+                navigate("/dashboard/:dashboardId");
               }
           } catch (error) {
             console.error('Erreur lors de la vérification de l\'authentification', error);
