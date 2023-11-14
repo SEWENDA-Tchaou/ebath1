@@ -31,13 +31,9 @@ function App() {
           <Route path="/allcontact" element={<All />} />
           <Route path="/contact" element={<Contact />} />
           <Route  element={<ProtectedRoute/>} >
-            {auth ?
              <Route path="/dashboard/*" element={<Dashboard />} />
-             :
-             'nothing'
-            }
-            <Route path="/dashboard/*" element={<Dashboard />} />
           </Route>
+            <Route path="/dashboard/*" element={<Dashboard />} />
          <Route path="/btp" element={<Btp />} />
           <Route path="/hotel" element={<Hotel />} />
             <Route path="/background" element={<BackgroundBanner />} />
