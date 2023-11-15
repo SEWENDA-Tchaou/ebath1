@@ -58,7 +58,7 @@ function Projects() {
     // };
 
     const getBackgroundContents = async() => {
-        const response = await axios.get("https://fine-pink-deer.cyclic.app/background");
+        const response = await axios.get("https://ebath-back1.vercel.app/background");
         console.log(response.data)
         setContenuSiteBackground(response.data);
     };
