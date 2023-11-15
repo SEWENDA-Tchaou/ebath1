@@ -6,7 +6,9 @@ function Comment() {
 
 
    useEffect(()=>{
-       fetch("https://ebath-back1.vercel.app/afficheCommentaires")
+       fetch("https://ebath-back1.vercel.app/afficheCommentaires",{
+        mode: 'no-cors'
+       })
        .then(res =>res.json())
        .then(data =>setContactData(data))
        .catch(err => console.log(err));
