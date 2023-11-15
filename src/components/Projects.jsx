@@ -1,4 +1,4 @@
-// import axios from 'axios';
+import axios from 'axios';
 import { Tab } from '@headlessui/react';
 import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
@@ -16,7 +16,7 @@ function Projects() {
     // const [contenuSiteA, setContenuSite] = useState([]);
     // const [contenuSiteBtp, setContenuSiteBtp] = useState([]);
     // const [contenuSiteHotel, setContenuSiteHotel] = useState([]);
-    // const [contenuSiteBackground, setContenuSiteBackground] = useState([]);
+    const [contenuSiteBackground, setContenuSiteBackground] = useState([]);
     const [slidesPerView, setSlidesPerView] = useState(3);
     const isMobile = useMediaQuery({ maxWidth: 767 });
     const isMedium = useMediaQuery({ minWidth: 768, maxWidth: 1023 });
@@ -32,12 +32,12 @@ function Projects() {
         }
     }, [isMobile, isMedium]);
 
-    // useEffect(() => {
-    //     getContents();
-    //     getBtpContents();
-    //     getHotelContents();
-    //     getBackgroundContents();
-    // }, [contenuSiteA, contenuSiteBtp, contenuSiteHotel,contenuSiteBackground]);
+    useEffect(() => {
+        // getContents();
+        // getBtpContents();
+        // getHotelContents();
+        getBackgroundContents();
+    }, [contenuSiteBackground]);
 
     // const getContents = async() => {
     //     const response = await axios.get("https://fine-pink-deer.cyclic.app/contents");
@@ -57,11 +57,11 @@ function Projects() {
     //     setContenuSiteHotel(response.data);
     // };
 
-    // const getBackgroundContents = async() => {
-    //     const response = await axios.get("https://fine-pink-deer.cyclic.app/background");
-    //     console.log(response.data)
-    //     setContenuSiteBackground(response.data);
-    // };
+    const getBackgroundContents = async() => {
+        const response = await axios.get("https://fine-pink-deer.cyclic.app/background");
+        console.log(response.data)
+        setContenuSiteBackground(response.data);
+    };
 
     return (
         <div className="mx-4 sm:mx-12">
@@ -116,7 +116,7 @@ function Projects() {
                                     </div>
                                     {/* ======== */}
                                 </div>
-                                {/* {
+                                {
                                     contenuSiteBackground.slice(-1).map((data) => (
                                         <div
                                             key={data.id}
@@ -128,7 +128,7 @@ function Projects() {
                                             </span>
                                         </div>
                                     ))
-                                } */}
+                                } 
                             </div>
                             <div className="space-y-4  sm:w-1/3 mx-2">
                                 {/* {contenuSiteHotel.slice(-2).map((data) => (
