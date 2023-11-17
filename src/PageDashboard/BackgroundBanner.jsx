@@ -16,9 +16,9 @@ function BackgroundBanner() {
 
   const upload = ()=>{
     const formData = new FormData()
-        formData.append("name", name);
-        formData.append("titre", titre);
-        formData.append('file', file)
+        formData.append("name", `${name}`);
+        formData.append("titre", `${titre}`);
+        formData.append('file', `${file}`)
         axios.post('https://ebath-back1.vercel.app/createBackground',formData )
         .then((response) => {
             console.log(response);
