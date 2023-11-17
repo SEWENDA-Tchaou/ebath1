@@ -32,12 +32,12 @@ function Projects() {
         }
     }, [isMobile, isMedium]);
 
-    // useEffect(() => {
+    useEffect(() => {
         // getContents();
         // getBtpContents();
         // getHotelContents();
-    //     getBackgroundContents();
-    // }, [contenuSiteBackground]);
+        getBackgroundContents();
+    }, [contenuSiteBackground]);
 
     // const getContents = async() => {
     //     const response = await axios.get("https://fine-pink-deer.cyclic.app/contents");
@@ -57,21 +57,11 @@ function Projects() {
     //     setContenuSiteHotel(response.data);
     // };
 
-
-
-   useEffect(()=>{
-       fetch("https://ebath-back1.vercel.app/background")
-       .then(res =>res.json())
-       .then(data =>setContenuSiteBackground(data))
-       .catch(err => console.log(err));
-   }, [])
-
-
-    // const getBackgroundContents = async() => {
-    //     const response = await axios.get("https://ebath-back1.vercel.app/background");
-    //     console.log(response.data)
-    //     setContenuSiteBackground(response.data);
-    // };
+    const getBackgroundContents = async() => {
+        const response = await axios.get("https://ebath-back1.vercel.app/background");
+        console.log(response.data)
+        setContenuSiteBackground(response.data);
+    };
 
     return (
         <div className="mx-4 sm:mx-12">

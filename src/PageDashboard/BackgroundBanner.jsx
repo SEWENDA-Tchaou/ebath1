@@ -4,77 +4,55 @@ import Sidebar from '../components/Sidebar';
 import HeaderDashboard from './HeaderDashboard';
 
 function BackgroundBanner() {
-  // const [texte, setTexte] = useState("");
-  // const [file, setFile] = useState("");
-  // const [preview, setPreview] = useState("");
-  // const [contenuSite, setContenuSite] = useState(['']);
-
-  const [name, setName] = useState('')
-  const [titre, setTitre] = useState('')
-  const [file, setFile] = useState('')
-  const [msg, setMsg] = useState("");
-
-  const upload = ()=>{
-    const formData = new FormData()
-        formData.append("name", `${name}`);
-        formData.append("titre", `${titre}`);
-        formData.append('file', `${file}`)
-        axios.post('https://ebath-back1.vercel.app/createBackground',formData )
-        .then((response) => {
-            console.log(response);
-            if(response.data.Status === 'Success') {
-                setMsg("Bien envoyer");
-            }else{
-                setMsg("Error");
-            }
-        })
-        .catch(er => console.log(er))
-  }
+  const [texte, setTexte] = useState("");
+  const [file, setFile] = useState("");
+  const [preview, setPreview] = useState("");
+  const [contenuSite, setContenuSite] = useState(['']);
 
   // route pour afficher nos images qui sont dans la base de donnee
-  // useEffect(() => {
-  //   getContents();
-  // }, []);
+  useEffect(() => {
+    getContents();
+  }, []);
 
-  // const getContents = async() => {
-  //   const response = await axios.get("https://ebath-back1.vercel.app/background");
-  //   console.log(response.data)
-  //   setContenuSite(response.data);
-  // };
+  const getContents = async() => {
+    const response = await axios.get("https://ebath-back1.vercel.app/background");
+    console.log(response.data)
+    setContenuSite(response.data);
+  };
 
-  // const loadImage = (e) => {
-  //   const image = e.target.files[0];
-  //   setFile(image);
-  //   setPreview(URL.createObjectURL(image));
-  // };
+  const loadImage = (e) => {
+    const image = e.target.files[0];
+    setFile(image);
+    setPreview(URL.createObjectURL(image));
+  };
 
-  // const saveForm = async() => {
-  // //   e.preventDefault();
-  //   const formData = new FormData();
-  //   formData.append("file", file);
-  //   formData.append("texte", texte);
-  //   try {
-  //     await axios.post("https://ebath-back1.vercel.app/background", formData, {
-  //       headers:{
-  //         "Content-type": "multipart/form-data"
-  //       }
-  //     });
-  //     // navigate("/")
-  //   } catch(error) {
-  //     console.log(error);
-  //   }
-  // };
+  const saveForm = async() => {
+  //   e.preventDefault();
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("texte", texte);
+    try {
+      await axios.post("https://ebath-back1.vercel.app/background", formData, {
+        headers:{
+          "Content-type": "multipart/form-data"
+        }
+      });
+      // navigate("/")
+    } catch(error) {
+      console.log(error);
+    }
+  };
 
   // suppression du contenu
-  // const deleteContent = async(contentId) => {
-  //   try {
-  //     await axios.delete(`https://ebath-back1.vercel.app/background/${contentId}`);
-  //     getContents();
-  //   }catch(error){
-  //     console.log(error);
-  //   }
-  //   console.log('sup....')
-  // };
+  const deleteContent = async(contentId) => {
+    try {
+      await axios.delete(`https://ebath-back1.vercel.app/background/${contentId}`);
+      getContents();
+    }catch(error){
+      console.log(error);
+    }
+    console.log('sup....')
+  };
 
   // console.log(contenuSite);
 
@@ -88,7 +66,7 @@ function BackgroundBanner() {
         <div className="w-[80%] h-full bg-noir/10">
           <div className='border m-5 rounded-lg bg-noir/40'>
             <h1 className='text-3xl text-center m-7'>{"Ajouter des contenus a l'onglet BTP"}</h1>
-            {/* <form  onSubmit={saveForm}  className='px-[4%] flex'>
+            <form  onSubmit={saveForm}  className='px-[4%] flex'>
               <div>
                 <div>
                   <label htmlFor="">Ajouter une Image</label><br />
@@ -114,37 +92,9 @@ function BackgroundBanner() {
                   Envoyer
                 </button>
               </div>
-            </form> */}
-              <form action="">
-          <div>
-            <label htmlFor="">nom</label>
-            <input type="text"  
-            placeholder='votre nom'
-            onChange={(e)=>setName(e.target.value)}
-            />
-          </div><br /><br />
-          <div>
-            <label htmlFor="">votre titre</label>
-            <input 
-            type="text"  
-            placeholder='Le titre'
-            onChange={(e)=>setTitre(e.target.value)}
-            />
-          </div><br /><br />
-          <div>
-            <label htmlFor="">Votre image</label>
-            <input 
-            type="file"  
-            placeholder='votre image'
-            onChange={(e)=>setFile(e.target.files[0])}
-            
-            />
-          </div><br /><br />
-          <button type='button' onClick={upload}>Envoyer</button>
-          <h1>{msg}</h1>
-        </form>
+            </form>
             {/* Apercu de l'image */}
-            {/* {preview ? (
+            {preview ? (
               <img
                 src={preview}
                 alt=" Apercu de l'image"
@@ -153,11 +103,11 @@ function BackgroundBanner() {
               />
               ) : (
                 ""
-            )} */}
+            )}
           </div>
           {/* Affichage de l'image */}
           <div className='flex  px-4'>
-           {/* {contenuSite.map((data)=>(
+           {contenuSite.map((data)=>(
               <div key={data.id} className='m-1'>
                   <div className='w-full  bg-noir/10 justify-around items-center  '>
                       <figure className="image ">
@@ -180,7 +130,7 @@ function BackgroundBanner() {
                       </div>
                   </div>
               </div>
-          ))} */}
+          ))}
           </div>
         </div>
       </div>
