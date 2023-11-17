@@ -19,7 +19,7 @@ function BackgroundBanner() {
         formData.append("name", name);
         formData.append("titre", titre);
         formData.append('file', file)
-        axios.post('http://localhost:4000/create',formData )
+        axios.post('https://ebath-back1.vercel.app/createBackground',formData )
         .then((response) => {
             console.log(response);
             if(response.data.Status === 'Success') {
