@@ -1,24 +1,24 @@
 import axios from 'axios';
-// import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import HeaderDashboard from '../PageDashboard/HeaderDashboard';
 import ReadMoreMessageRecu from '../PageDashboard/ReadMoreMessageRecu';
 
 function All() {
 
-   // affichage des donnes de la table contacts
-  //  const [contactData, setContactData] = useState([])
-  //  useEffect(()=>{
-  //      fetch("https://fine-pink-deer.cyclic.app/afficheContact")
-  //      .then(res =>res.json())
-  //      .then(data =>setContactData(data))
-  //      .catch(err => console.log(err));
-  //  }, )
+  //  affichage des donnes de la table contacts
+   const [contactData, setContactData] = useState([])
+   useEffect(()=>{
+       fetch("https://ebath-back1.vercel.app/afficheContact")
+       .then(res =>res.json())
+       .then(data =>setContactData(data))
+       .catch(err => console.log(err));
+   }, )
 
    //supprimer a partir du bouton delete
   const handleDelete = async (id)=>{
     try{
-      await axios.delete("https://fine-pink-deer.cyclic.app/supContact/"+id)
+      await axios.delete("https://ebath-back1.vercel.app/supContact/"+id)
       window.location.reload()
     }catch(err){
       console.log(err)
@@ -47,7 +47,7 @@ function All() {
                   <strong className='w-1/4'>Message</strong>
                   <strong className='w-1/4'>Action</strong>
                 </div>
-            {/* {contactData.map((data)=>(
+            {contactData.map((data)=>(
               <div key={data.id} className=''>
                 <div className='flex justify-around items-start px-2 my-2  bg-noir/10    '>
                     <p className=' w-1/4 text-[10px] my-3'>{data.objet}</p>
@@ -71,7 +71,7 @@ function All() {
                     </div>
                 </div>
             </div>
-          ))} */}
+          ))}
           </div>
         </div>
       </div>

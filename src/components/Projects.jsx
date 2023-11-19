@@ -40,19 +40,19 @@ function Projects() {
     }, [contenuSiteBackground]);
 
     // const getContents = async() => {
-    //     const response = await axios.get("https://fine-pink-deer.cyclic.app/contents");
+    //     const response = await axios.get("https://ebath-back1.vercel.app/contents");
     //     console.log(response.data)
     //     setContenuSite(response.data);
     // };
 
     // const getBtpContents = async() => {
-    //     const response = await axios.get("https://fine-pink-deer.cyclic.app/btp");
+    //     const response = await axios.get("https://ebath-back1.vercel.app/btp");
     //     console.log(response.data)
     //     setContenuSiteBtp(response.data);
     // };
 
     // const getHotelContents = async() => {
-    //     const response = await axios.get("https://fine-pink-deer.cyclic.app/hotel");
+    //     const response = await axios.get("https://ebath-back1.vercel.app/hotel");
     //     console.log(response.data)
     //     setContenuSiteHotel(response.data);
     // };

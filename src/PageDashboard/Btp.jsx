@@ -1,58 +1,58 @@
-// import axios from 'axios';
-// import { useEffect, useState } from 'react';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
 import Sidebar from '../components/Sidebar';
 import HeaderDashboard from './HeaderDashboard';
 
 function Btp() {
-  // const [texte, setTexte] = useState("");
-  // const [file, setFile] = useState("");
-  // const [preview, setPreview] = useState("");
-  // const [contenuSite, setContenuSite] = useState(['']);
+  const [texte, setTexte] = useState("");
+  const [file, setFile] = useState("");
+  const [preview, setPreview] = useState("");
+  const [contenuSite, setContenuSite] = useState(['']);
 
   // route pour afficher nos images qui sont dans la base de donnee
-  // useEffect(() => {
-  //   getContents();
-  // }, []);
+  useEffect(() => {
+    getContents();
+  }, []);
 
-  // const getContents = async() => {
-  //   const response = await axios.get("https://fine-pink-deer.cyclic.app/btp");
-  //   console.log(response.data)
-  //   setContenuSite(response.data);
-  // };
+  const getContents = async() => {
+    const response = await axios.get("https://ebath-back1.vercel.app/btp");
+    console.log(response.data)
+    setContenuSite(response.data);
+  };
 
-  // const loadImage = (e) => {
-  //   const image = e.target.files[0];
-  //   setFile(image);
-  //   setPreview(URL.createObjectURL(image));
-  // };
+  const loadImage = (e) => {
+    const image = e.target.files[0];
+    setFile(image);
+    setPreview(URL.createObjectURL(image));
+  };
 
-  // const saveForm = async() => {
-  //   // e.preventDefault();
-  //   const formData = new FormData();
-  //   formData.append("file", file);
-  //   formData.append("texte", texte);
-  //   try {
-  //     await axios.post("https://fine-pink-deer.cyclic.app/btp", formData, {
-  //       headers:{
-  //         "Content-type": "multipart/form-data"
-  //       }
-  //     });
-  //     // navigate("/")
-  //   } catch(error) {
-  //     console.log(error);
-  //   }
-  // };
+  const saveForm = async() => {
+    // e.preventDefault();
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("texte", texte);
+    try {
+      await axios.post("https://ebath-back1.vercel.app/btp", formData, {
+        headers:{
+          "Content-type": "multipart/form-data"
+        }
+      });
+      // navigate("/")
+    } catch(error) {
+      console.log(error);
+    }
+  };
 
   // suppression du contenu
-  // const deleteContent = async(contentId) => {
-  //   try {
-  //     await axios.delete(`https://fine-pink-deer.cyclic.app/btp/${contentId}`);
-  //     getContents();
-  //   }catch(error){
-  //     console.log(error);
-  //   }
-  //   console.log('sup....')
-  // };
+  const deleteContent = async(contentId) => {
+    try {
+      await axios.delete(`https://ebath-back1.vercel.app/btp/${contentId}`);
+      getContents();
+    }catch(error){
+      console.log(error);
+    }
+    console.log('sup....')
+  };
 
   // console.log(contenuSite);
 
@@ -66,7 +66,7 @@ function Btp() {
         <div className="w-[80%] h-full bg-noir/10">
           <div className='border m-5 rounded-lg bg-noir/40'>
             <h1 className='text-3xl text-center m-7'>{"Ajouter des contenus a l'onglet BTP"}</h1>
-            {/* <form
+             <form
               onSubmit={saveForm}
               className='px-[4%] flex'
             >
@@ -95,9 +95,9 @@ function Btp() {
                   Envoyer
                 </button>
               </div>
-            </form> */}
+            </form> 
             {/* Apercu de l'image */}
-            {/* {preview ? (
+             {preview ? (
               <img
                 src={preview}
                 alt=" Apercu de l'image"
@@ -106,11 +106,11 @@ function Btp() {
               />
               ) : (
                 ""
-            )} */}
+            )} 
           </div>
           {/* Affichage de l'image */}
           <div className='flex  px-4'>
-           {/* {contenuSite.map((data) => (
+           {contenuSite.map((data) => (
               <div key={data.id} className='m-1'>
                   <div className='w-full  bg-noir/10 justify-around items-center  '>
                       <figure className="image ">
@@ -133,7 +133,7 @@ function Btp() {
                       </div>
                   </div>
               </div>
-            ))} */}
+            ))}
           </div>
         </div>
       </div>

@@ -1,29 +1,29 @@
-// import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import HeaderDashboard from '../PageDashboard/HeaderDashboard';
 import Sidebar from '../components/Sidebar';
-// import axios from 'axios';
+import axios from 'axios';
 
 function Commentaires() {
      // affichage des donnes de la table contacts
-  //  const [contactData, setContactData] = useState([])
+   const [contactData, setContactData] = useState([])
 
 
-  //  useEffect(()=>{
-  //      fetch("https://fine-pink-deer.cyclic.app/afficheCommentaires")
-  //      .then(res =>res.json())
-  //      .then(data =>setContactData(data))
-  //      .catch(err => console.log(err));
-  //  }, )
+   useEffect(()=>{
+       fetch("https://ebath-back1.vercel.app/afficheCommentaires")
+       .then(res =>res.json())
+       .then(data =>setContactData(data))
+       .catch(err => console.log(err));
+   }, )
 
    //supprimer a partir du bouton delete
-  // const handleDelete = async (id)=>{
-  //   try{
-  //     await axios.delete("https://fine-pink-deer.cyclic.app/supCommentaires/"+id)
-  //     window.location.reload()
-  //   }catch(err){
-  //     console.log(err)
-  //   }
-  //  }
+  const handleDelete = async (id)=>{
+    try{
+      await axios.delete("https://ebath-back1.vercel.app/supCommentaires/"+id)
+      window.location.reload()
+    }catch(err){
+      console.log(err)
+    }
+   }
   return (
     <div >
       <HeaderDashboard/>
@@ -45,7 +45,7 @@ function Commentaires() {
                   <strong className='w-1/4'>Commentaires</strong>
                   <strong className='w-1/4 text-rouge '>Action</strong>
                 </div>
-         {/* {contactData.map((data)=>(
+          {contactData.map((data)=>(
               <div key={data.id} className=''>
                 <div className='flex  px-2 my-2  bg-noir/10    '>
                     <p className=' w-1/4 '>{data.name}</p>
@@ -63,7 +63,7 @@ function Commentaires() {
                     </div>
                 </div>
             </div>
-          ))}  */}
+          ))}  
           </div>
         </div>
       </div>

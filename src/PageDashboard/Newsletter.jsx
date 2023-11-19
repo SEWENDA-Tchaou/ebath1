@@ -9,7 +9,7 @@ function Newsletter() {
 
 
    useEffect(()=>{
-       fetch("https://odd-plum-hare.cyclic.app/afficheAbonnes")
+       fetch("https://ebath-back1.vercel.app/afficheAbonnes")
        .then(res =>res.json())
        .then(data =>setContactData(data))
        .catch(err => console.log(err));
@@ -18,7 +18,7 @@ function Newsletter() {
    //supprimer a partir du bouton delete
   const handleDelete = async (id)=>{
     try{
-      await axios.delete("hhttps://fine-pink-deer.cyclic.app/supAbonnes/"+id)
+      await axios.delete("hhttps://ebath-back1.vercel.app/supAbonnes/"+id)
       window.location.reload()
     }catch(err){
       console.log(err)

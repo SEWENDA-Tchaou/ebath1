@@ -11,7 +11,7 @@ function Contact() {
 
   const handleSubmit = ()=>{
     // event.preventDefault();
-    axios.post("https://odd-plum-hare.cyclic.app//contact", {objet, email, phone, message})
+    axios.post("https://ebath-back1.vercel.app//contact", {objet, email, phone, message})
     .then(res => {console.log(res);
       // Navigate("/Actualite");
     })

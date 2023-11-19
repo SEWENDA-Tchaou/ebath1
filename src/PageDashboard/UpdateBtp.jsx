@@ -17,7 +17,7 @@ function UpdateBtp() {
   },[]);
 
   const getContentByid = async() => {
-    const response = await axios.get(`https://odd-plum-hare.cyclic.app/btp/${id}`);
+    const response = await axios.get(`https://ebath-back1.vercel.app/btp/${id}`);
     setTexte(response.data.name);
     setFile(response.data.image);
     setPreview(response.data.url);
@@ -36,7 +36,7 @@ function UpdateBtp() {
     formData.append("file", file);
     formData.append("texte", texte);
     try{
-      await axios.put(`https://fine-pink-deer.cyclic.app/btp/${id}`, formData, {
+      await axios.put(`https://ebath-back1.vercel.app/btp/${id}`, formData, {
         headers:{
           "Content-type": "multipart/form-data"
         }

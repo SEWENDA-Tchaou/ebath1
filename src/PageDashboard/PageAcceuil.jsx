@@ -11,7 +11,7 @@ function PageAcceuil() {
 
   const handleSubmit = ()=>{
     // event.preventDefault();
-    axios.post("https://fine-pink-deer.cyclic.app/sendNews", {news})
+    axios.post("https://ebath-back1.vercel.app/sendNews", {news})
     .then(res => {console.log(res);
       Navigate("/");
     })

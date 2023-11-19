@@ -8,7 +8,7 @@ function UpdateAll() {
   const [texte, setTexte] = useState("");
   const [file, setFile] = useState("");
   const [preview, setPreview] = useState("");
-  // const [contenuSite, setContenuSite] = useState(['']);
+  const [contenuSite, setContenuSite] = useState(['']);
   const navigate = useNavigate();
   const {id} = useParams();
 
@@ -18,7 +18,7 @@ function UpdateAll() {
   },[]);
 
   const getContentByid = async() => {
-    const response = await axios.get(`https://odd-plum-hare.cyclic.app/contents/${id}`);
+    const response = await axios.get(`https://ebath-back1.vercel.app/contents/${id}`);
     setTexte(response.data.name);
     setFile(response.data.image);
     setPreview(response.data.url);
@@ -37,7 +37,7 @@ function UpdateAll() {
     formData.append("file", file);
     formData.append("texte", texte);
     try{
-      await axios.put(`https://fine-pink-deer.cyclic.app/contents/${id}`, formData, {
+      await axios.put(`https://ebath-back1.vercel.app/contents/${id}`, formData, {
         headers:{
           "Content-type": "multipart/form-data"
         }

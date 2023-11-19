@@ -17,7 +17,7 @@ function UpdateBtp() {
   },[]);
 
   const getContentByid = async() => {
-    const response = await axios.get(`https://fine-pink-deer.cyclic.app/hotel/${id}`);
+    const response = await axios.get(`https://ebath-back1.vercel.app/hotel/${id}`);
     setTexte(response.data.name);
     setFile(response.data.image);
     setPreview(response.data.url);
@@ -36,7 +36,7 @@ function UpdateBtp() {
     formData.append("file", file);
     formData.append("texte", texte);
     try{
-      await axios.put(`https://odd-plum-hare.cyclic.app/hotel/${id}`, formData, {
+      await axios.put(`https://ebath-back1.vercel.app/hotel/${id}`, formData, {
         headers:{
           "Content-type": "multipart/form-data"
         }
